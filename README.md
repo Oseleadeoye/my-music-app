@@ -1,32 +1,41 @@
 # 🎵 Music Recommendation App
 
-A content-based music recommendation system that suggests songs similar to the one you love — powered by machine learning and song lyrics.
+An AI-powered music discovery engine that understands the soul of a song — not just its genre or popularity — and finds music that truly matches it.
 
-## 🎧 What It Does
+## ✨ What It Does
 
-Simply pick a song from the dropdown, hit **"Recommend Similar Songs"**, and get a list of 5 songs with similar lyrical themes and style — instantly.
+Select any song from the library, click **"Recommend Similar Songs"**, and let the model do the rest. Within seconds, you'll get 5 songs that share the same lyrical DNA as your pick.
 
-No sign-up. No account. Just music.
+No streaming account required. No listening history needed. Just pure, language-driven discovery.
 
-## 🧠 How It Works
+---
 
-The app uses **Natural Language Processing (NLP)** and **Machine Learning** to analyse the lyrics of over 57,000 songs. When you select a song:
+## 🤖 The AI Behind It
 
-1. The lyrics are vectorized using **TF-IDF** (Term Frequency-Inverse Document Frequency)
-2. **Cosine Similarity** is calculated between songs to measure how alike their lyrics are
-3. The top 5 most similar songs are returned to you
+Most recommendation systems tell you what's *popular* or what *other users* listened to. This app is different — it reads and understands the **actual words** in a song's lyrics.
 
-This is called **Content-Based Filtering** — it recommends based on the actual content of the song, not other users' listening habits.
+### 🔤 Language Vectorization (TF-IDF)
+Every song's lyrics are transformed into a mathematical representation using **TF-IDF (Term Frequency-Inverse Document Frequency)**. This technique highlights the words that are most unique and meaningful to each song, filtering out common filler words that carry no significance.
+
+### 📐 Semantic Similarity (Cosine Similarity)
+Once every song is represented as a high-dimensional vector, the model computes the **Cosine Similarity** between songs. Songs whose lyrical vectors point in the same direction — sharing similar themes, imagery, and vocabulary — are ranked as most similar. The top 5 are returned to you.
+
+### 🧠 Content-Based Filtering
+Unlike collaborative filtering (which relies on other users' behaviour), this app uses **Content-Based Filtering** — it matches songs based purely on their own properties. This means it can surface deep cuts and lesser-known tracks that *feel* right, regardless of popularity.
+
+---
 
 ## 🛠️ Tech Stack
 
-| Tool | Purpose |
+| Tool | Role |
 |---|---|
 | Python | Core language |
-| Streamlit | Web app interface |
-| Scikit-learn | TF-IDF & Cosine Similarity |
-| NLTK | Text cleaning & tokenization |
-| Pandas | Data handling |
+| Streamlit | Interactive web interface |
+| Scikit-learn | TF-IDF vectorization & cosine similarity |
+| NLTK | Text preprocessing & tokenization |
+| Pandas | Dataset management |
+
+---
 
 ## 📂 Run Locally
 
@@ -37,8 +46,10 @@ pip install -r requirements.txt
 streamlit run src/main.py
 ```
 
-> ⚠️ The first run will take ~30–60 seconds to process the dataset. After that it's instant.
+> ⚠️ The first launch will take ~30–60 seconds to process the full dataset. After that, it runs instantly.
+
+---
 
 ## 📊 Dataset
 
-The app uses the [Spotify Million Song Dataset](https://www.kaggle.com/datasets/notshrirang/spotify-million-song-dataset) — a large collection of songs with their lyrics, artists, and metadata.
+Trained on the [Spotify Million Song Dataset](https://www.kaggle.com/datasets/notshrirang/spotify-million-song-dataset) — a comprehensive collection of songs, artists, and full lyrics spanning multiple decades and genres.
