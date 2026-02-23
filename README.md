@@ -1,62 +1,44 @@
-# Music Recommendation App 🎵
+# 🎵 Music Recommendation App
 
-A machine learning-based content recommendation engine that suggests similar songs based on their lyrics. Built with Python, Scikit-learn, and Streamlit.
+A content-based music recommendation system that suggests songs similar to the one you love — powered by machine learning and song lyrics.
 
-## 🚀 Features
+## 🎧 What It Does
 
-- **Content-Based Filtering**: Uses TF-IDF vectorization and Cosine Similarity to find songs with similar lyrical content.
-- **Instant Recommendations**: Select a song and get top 5 similar tracks immediately.
-- **Auto-Preprocessing**: The app automatically processes the raw dataset on the first run, making it easy to deploy without uploading large pre-calculated files.
-- **Interactive UI**: Clean and simple web interface powered by Streamlit.
+Simply pick a song from the dropdown, hit **"Recommend Similar Songs"**, and get a list of 5 songs with similar lyrical themes and style — instantly.
+
+No sign-up. No account. Just music.
+
+## 🧠 How It Works
+
+The app uses **Natural Language Processing (NLP)** and **Machine Learning** to analyse the lyrics of over 57,000 songs. When you select a song:
+
+1. The lyrics are vectorized using **TF-IDF** (Term Frequency-Inverse Document Frequency)
+2. **Cosine Similarity** is calculated between songs to measure how alike their lyrics are
+3. The top 5 most similar songs are returned to you
+
+This is called **Content-Based Filtering** — it recommends based on the actual content of the song, not other users' listening habits.
 
 ## 🛠️ Tech Stack
 
-- **Python 3.9+**
-- **Streamlit** (Web App Framework)
-- **Pandas** (Data Manipulation)
-- **Scikit-learn** (Machine Learning / Vectorization)
-- **NLTK** (Natural Language Processing)
+| Tool | Purpose |
+|---|---|
+| Python | Core language |
+| Streamlit | Web app interface |
+| Scikit-learn | TF-IDF & Cosine Similarity |
+| NLTK | Text cleaning & tokenization |
+| Pandas | Data handling |
 
-## 📦 Installation
+## 📂 Run Locally
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Oseleadeoye/my-music-app.git
-   cd my-music-app
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the app:**
-   ```bash
-   streamlit run src/main.py
-   ```
-   *Note: The first run might take ~30-60 seconds to preprocess the data. Subsequent runs will be instant.*
-
-## ☁️ Deployment
-
-This app is ready for **Streamlit Community Cloud**:
-
-1. Push your code to GitHub.
-2. Log in to [Streamlit Cloud](https://share.streamlit.io/).
-3. Create a new app, select this repository, and set the main file path to `src/main.py`.
-4. Click **Deploy**!
-
-## 📂 Project Structure
-
-```
-├── src/
-│   ├── main.py          # Streamlit application UI
-│   ├── recommend.py     # Recommendation logic & preprocessing
-│   └── spotify_...csv   # Dataset
-├── .gitignore           # Ignored files
-├── requirements.txt     # Python dependencies
-└── README.md            # Project documentation
+```bash
+git clone https://github.com/Oseleadeoye/my-music-app.git
+cd my-music-app
+pip install -r requirements.txt
+streamlit run src/main.py
 ```
 
-## 📝 Credits
+> ⚠️ The first run will take ~30–60 seconds to process the dataset. After that it's instant.
 
-Original dataset: [Spotify Million Song Dataset](https://www.kaggle.com/datasets/notshrirang/spotify-million-song-dataset)
+## 📊 Dataset
+
+The app uses the [Spotify Million Song Dataset](https://www.kaggle.com/datasets/notshrirang/spotify-million-song-dataset) — a large collection of songs with their lyrics, artists, and metadata.
